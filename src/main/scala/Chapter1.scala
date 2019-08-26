@@ -23,7 +23,7 @@ object Chapter1 {
   // Select the first and last Char from a string;
   def ch_1_9(s: String): String = {
     s.length match {
-      case it if 0 until 0 contains it => ""
+      case 0 => ""
       case _ => s.take(1).concat(s.takeRight(1))
     }
   }

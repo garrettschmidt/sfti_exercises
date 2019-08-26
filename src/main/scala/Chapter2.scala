@@ -11,7 +11,7 @@ object Chapter2 {
   def ch_2_1(num: Int) : Int = {
     num match {
       case it if Int.MinValue to -1 contains it => -1
-      case it if 0 to 0 contains it => 0
+      case 0 => 0
       case _ => 1
     }
   }
@@ -45,6 +45,43 @@ object Chapter2 {
   // Write a for loop for computing the product of Unicode codes of all
   // letters in a string.
   def ch_2_6(s: String) : BigInt = {
+    var ret = 1L;
+    for (i <- 0 until s.length) {
+      ret *= s.charAt(i).toInt;
+    }
+    ret
+  }
+
+  // Solve the preceding exercise without writing a loop
+  def ch_2_7(s: String) : BigInt = {
+    ch_2_8(s)
+  }
+
+  // Write a function product(s: String) that computes the product
+  // as described in the preceding exercises
+  def ch_2_8(s: String) : BigInt = {
     s.foldLeft(1L)((x, y) => x * y.toLong)
+  }
+
+  // Make the function in the preceding exercise a recursive function
+  def ch_2_9(s: String) : BigInt = {
+    s.length match {
+        case 0 => 1
+        case _ => s.head.toLong * ch_2_8(s.tail)
+    }
+  }
+
+  // Write a function that computes x^n, where n is an integer
+  def ch_2_10(x: Int, n: Int) : Double = {
+    n match {
+      case 0
+        => 1
+      case it if ((n % 2 == 0) && (n > 0))
+        => (ch_2_10(x, n / 2) * ch_2_10(x, n / 2))
+      case it if ((n % 2 == 1) && (n > 0))
+        => (x * ch_2_10(x, n-1))
+      case it if Int.MinValue to -1 contains it
+        => (1.0d / ch_2_10(x, -n))
+    }
   }
 }

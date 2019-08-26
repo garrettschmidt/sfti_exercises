@@ -36,4 +36,26 @@ class Chapter2 extends FunSuite {
     assert(Chapter2.ch_2_6("Hello") == BigInt(9415087488L))
   }
 
+  test("ch_2_6, ch_2_7, ch_2_8, ch_2_9 all compute equivalent values despite different impls.") {
+    val goodbye = "Goodbye"
+    Set(
+      Chapter2.ch_2_6(goodbye),
+      Chapter2.ch_2_7(goodbye),
+      Chapter2.ch_2_8(goodbye),
+      Chapter2.ch_2_9(goodbye),
+    ).size == 1;
+  }
+
+  test("ch_2_10 computes x^n correctly with 2^1024") {
+    assert(Chapter2.ch_2_10(2, 10) == 1024.0)
+  }
+
+  test("ch_2_10 computes x^n correctly with 2^0") {
+    assert(Chapter2.ch_2_10(2, 0) == 1)
+  }
+
+  test("ch_2_10 computes x^n correctly with 2^1") {
+    assert(Chapter2.ch_2_10(2, 1) == 2)
+  }
+
 }
