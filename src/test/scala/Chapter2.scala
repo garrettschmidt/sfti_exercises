@@ -3,22 +3,22 @@ import sfti.{Chapter1, Chapter2}
 
 class Chapter2 extends FunSuite {
 
-  test("ch_1_6 computes signum for zero") {
+  test("ch_2_6 computes signum for zero") {
     assert(Chapter2.ch_2_1(0) == 0)
   }
 
-  test("ch_1_6 computes signum for -1") {
+  test("ch_2_6 computes signum for -1") {
     assert(Chapter2.ch_2_1(-1) == -1)
   }
 
-  test("ch_1_6 computes signum for negative number") {
+  test("ch_2_6 computes signum for negative number") {
     assert(Chapter2.ch_2_1(-31231) == -1)
   }
 
-  test("ch_1_6 computes signum for 1") {
+  test("ch_2_6 computes signum for 1") {
     assert(Chapter2.ch_2_1(1) == 1)
   }
-  test("ch_1_6 computes signum for positive number") {
+  test("ch_2_6 computes signum for positive number") {
     assert(Chapter2.ch_2_1(91) == 1)
   }
 
