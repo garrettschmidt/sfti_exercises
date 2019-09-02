@@ -18,7 +18,6 @@ object Chapter4 {
   // Write a program that reads words from a file.  Use a mutable map to count
   // how often each word appears.
   def ch_4_2(filepath: String) : Map[String, Int] = {
-    val path = new java.io.File(".").getCanonicalPath;
     val in = new Scanner(new java.io.File(filepath));
     val res = mutable.Map[String, Int]()
     while (in.hasNext) {
@@ -121,7 +120,6 @@ object Chapter4 {
       lt += (if (x < v) 1 else 0)
       eqt += (if (x == v) 1 else 0)
       gt += (if (x > v) 1 else 0)
-
     })
     (lt, eqt, gt)
   }
