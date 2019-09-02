@@ -1,6 +1,5 @@
 package sfti
 
-import scala.collection.mutable
 import scala.util.Random
 
 object Chapter3 {
@@ -22,7 +21,7 @@ object Chapter3 {
         a(i+1) = i1
       }
     }
-    a.toArray
+    a
   }
 
   // Repeat the the preceding assignment but produce a new array with the swapped values.
@@ -31,8 +30,8 @@ object Chapter3 {
     val evenPositions = for (i <- 0 until a.length by 2) yield i
     val oddPositions  = for (i <- 1 until a.length by 2) yield i
     val zippedPositions = evenPositions.zip(oddPositions)
-    val b = zippedPositions.flatMap( x => List(a(x._2), a(x._1))).toArray
-    if (evenPositions.size > oddPositions.size) b :+ a.last else b
+    val interleavedPositions = zippedPositions.flatMap( x => List(a(x._2), a(x._1))).toArray
+    if (evenPositions.size > oddPositions.size) interleavedPositions :+ a.last else interleavedPositions
   }
 
   // Given an array of integers, produce a new array that contains all positive values
