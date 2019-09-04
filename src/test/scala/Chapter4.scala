@@ -47,6 +47,12 @@ class Chapter4 extends FunSuite {
       "Saturday" -> java.util.Calendar.SATURDAY)))
   }
 
+  test("ch_4_7 returns keys of all the same size (for line padding consistency)") {
+    val props = Chapter4.ch_4_7()
+    assert(props.keys.map(_.size).toSet.size == 1)
+    props.foreach(x => println(x._1 + " | " + x._2))
+  }
+
   test("ch_4_8 returns minmax of array") {
     assert(Chapter4.ch_4_8(Array(3, 1312, -231, 3, 5, 6, 98)) == ((-231, 1312)))
   }
