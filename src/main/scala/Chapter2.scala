@@ -76,9 +76,9 @@ object Chapter2 {
     n match {
       case 0
         => 1
-      case it if ((n % 2 == 0) && (n > 0))
+      case _ if ((n % 2 == 0) && (n > 0))
         => (ch_2_10(x, n / 2) * ch_2_10(x, n / 2))
-      case it if ((n % 2 == 1) && (n > 0))
+      case _ if ((n % 2 == 1) && (n > 0))
         => (x * ch_2_10(x, n-1))
       case it if Int.MinValue to -1 contains it
         => (1.0d / ch_2_10(x, -n))
