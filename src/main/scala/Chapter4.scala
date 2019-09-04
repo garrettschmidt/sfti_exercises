@@ -115,7 +115,6 @@ object Chapter4 {
     var lt = 0;
     var eqt = 0;
     var gt = 0;
-
     a.foreach(x => {
       lt += (if (x < v) 1 else 0)
       eqt += (if (x == v) 1 else 0)
