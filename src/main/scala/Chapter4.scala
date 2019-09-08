@@ -80,7 +80,7 @@ object Chapter4 {
   // Print a table of all Java properties reported by the getProperties method of the
   // java.lang.System class
   def whitespaceGen(n: Int) = {
-    (for (i <- 1 to n) yield ' ').mkString
+    (for (_ <- 1 to n) yield ' ').mkString
   }
 
   // Print a table of all Java properties reported by the getProperties method of the java.lang.System
