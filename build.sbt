@@ -2,6 +2,7 @@ name := "ScalaForTheImpatient"
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.8"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+libraryDependencies += "com.google.code.gson" % "gson" % "2.8.5"
 
 version := "0.1"
 
