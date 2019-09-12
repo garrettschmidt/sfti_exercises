@@ -7,10 +7,12 @@ class RandomSnippets extends FunSuite with Matchers {
   val gson = new Gson()
 
   test("Case class serializes properly with GSON") {
-    val json = "{ \"name\": \"AAPL\", \"stockPrice\": 200.00, \"previousPrices\": [210.7, 199.6] }"
+
+    val json = "{ \"name\": \"AAPL\", \"stockPrice\": 200.00, \"previousPrices\": [210.7, 199.6], \"nested\": { \"a\": \"Hello\", \"b\": 3, \"c\": 3.14 } }"
     val obj : ASerializableClass = gson.fromJson(json, classOf[ASerializableClass])
     obj.name shouldEqual "AAPL"
     obj.stockPrice shouldEqual 200.0
     obj.previousPrices shouldEqual Array(210.7, 199.6)
+    obj.nested shouldEqual NestedSerializableClass("Hello", 3, 3.14f)
   }
 }
